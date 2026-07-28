@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bte-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700" />
+      <stop offset="50%" stop-color="#FFB874" />
+      <stop offset="100%" stop-color="#F7931A" />
+    </linearGradient>
+    <filter id="bte-glow-subtle" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Left Icon Frame (Scaled 80x80) -->
+  <g transform="translate(10, 10) scale(0.15625)">
+    <rect width="512" height="512" rx="100" fill="#1E2020" />
+    <rect x="16" y="16" width="480" height="480" rx="84" fill="none" stroke="url(#bte-gold)" stroke-width="6" stroke-opacity="0.4" />
+    <polygon points="256,48 436,152 436,360 256,464 76,360 76,152" fill="none" stroke="url(#bte-gold)" stroke-width="12" stroke-linejoin="round"/>
+    
+    <path d="M120 340 L210 270 L290 310 L390 190" fill="none" stroke="#FFB874" stroke-width="8" opacity="0.5" />
+    <circle cx="390" cy="190" r="10" fill="#FFD700" />
+
+    <line x1="220" y1="130" x2="220" y2="155" stroke="url(#bte-gold)" stroke-width="14" stroke-linecap="round"/>
+    <line x1="270" y1="130" x2="270" y2="155" stroke="url(#bte-gold)" stroke-width="14" stroke-linecap="round"/>
+    <line x1="220" y1="357" x2="220" y2="382" stroke="url(#bte-gold)" stroke-width="14" stroke-linecap="round"/>
+    <line x1="270" y1="357" x2="270" y2="382" stroke="url(#bte-gold)" stroke-width="14" stroke-linecap="round"/>
+
+    <path d="M 180 155 L 275 155 C 325 155, 335 195, 335 215 C 335 240, 315 255, 290 255 C 325 255, 345 275, 345 305 C 345 340, 315 357, 270 357 L 180 357 Z" fill="none" stroke="url(#bte-gold)" stroke-width="28" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M 180 255 L 290 255" fill="none" stroke="url(#bte-gold)" stroke-width="24" stroke-linecap="round"/>
+    <path d="M 330 150 L 400 150 L 400 220" fill="none" stroke="#FFD700" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Right Typography -->
+  <text x="105" y="48" font-family="'Space Grotesk', 'Inter', sans-serif" font-weight="800" font-size="28" fill="#FFFFFF" letter-spacing="1">BITCOIN TREND</text>
+  <text x="105" y="78" font-family="'Space Grotesk', 'Inter', sans-serif" font-weight="700" font-size="20" fill="url(#bte-gold)" letter-spacing="8" filter="url(#bte-glow-subtle)">ELITE</text>
+</svg>

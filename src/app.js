@@ -97,9 +97,8 @@ function injectGlobalUIElements() {
       <!-- MOBILE NAVIGATION DRAWER -->
       <div id="mobile-nav-drawer" class="fixed inset-0 z-[8000] hidden bg-black/90 backdrop-blur-2xl transition-all duration-300 flex-col justify-between p-6">
         <div class="flex justify-between items-center pb-6 border-b border-outline-variant/30">
-          <a class="font-display text-xl font-bold text-primary flex items-center gap-2" href="index.html">
-            <span class="material-symbols-outlined text-primary text-2xl">currency_bitcoin</span>
-            <span>Bitcoin Journal</span>
+          <a class="font-display text-xl font-bold text-primary flex items-center gap-3" href="index.html" aria-label="Bitcoin Trend Elite Home">
+            <img src="/public/logo.svg" alt="Bitcoin Trend Elite" class="h-9 w-auto object-contain" />
           </a>
           <button id="close-mobile-drawer" class="text-on-surface-variant hover:text-primary p-2" aria-label="Close Navigation Menu">
             <span class="material-symbols-outlined text-3xl">close</span>
@@ -117,7 +116,7 @@ function injectGlobalUIElements() {
           <button class="subscribe-btn bg-primary text-black w-full py-3 rounded-xl uppercase font-bold tracking-widest mb-2">
             Subscribe to Journal
           </button>
-          <p>© 2024 Bitcoin Journal. All Rights Reserved.</p>
+          <p>© 2024 Bitcoin Trend Elite. All Rights Reserved.</p>
         </div>
       </div>
     `;
@@ -317,10 +316,10 @@ function bindPageForms() {
           body: JSON.stringify({ name, email, subject, message })
         });
         const data = await res.json();
-        showToast(data.message || 'Your dispatch has been transmitted to the board.', 'success');
+        showToast(data.message || 'Your dispatch has been transmitted to Bitcoin Trend Elite Company Board.', 'success');
         contactForm.reset();
       } catch (err) {
-        showToast('Transmission recorded. Thank you.', 'success');
+        showToast('Transmission to Company Board recorded. Thank you.', 'success');
         contactForm.reset();
       }
     });

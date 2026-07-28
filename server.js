@@ -20,7 +20,7 @@ app.use(express.static(__dirname));
 
 // In-memory Database Stores
 const subscribers = new Set([
-  'editorial@bitcointrendelite.com',
+  'contact@bitcointrendelite.com',
   'satoshi@gmx.com'
 ]);
 
@@ -266,7 +266,7 @@ app.post('/api/upload', (req, res) => {
   });
 });
 
-// 9. Contact Form Submission (Routed to editorial@bitcointrendelite.com)
+// 9. Contact Form Submission (Routed to contact@bitcointrendelite.com - Company Board)
 app.post('/api/contact', (req, res) => {
   const { name, email, subject, message } = req.body;
   if (!name || !email || !message) {
@@ -275,21 +275,21 @@ app.post('/api/contact', (req, res) => {
 
   const contactEntry = {
     id: Date.now().toString(),
-    recipient: 'editorial@bitcointrendelite.com',
+    recipient: 'contact@bitcointrendelite.com',
     name,
     email,
-    subject: subject || 'Editorial Board Inquiry',
+    subject: subject || 'Company Board Inquiry',
     message,
     timestamp: new Date().toISOString()
   };
 
   contactMessages.push(contactEntry);
-  console.log(`[Contact API] Message successfully routed to ${contactEntry.recipient} from ${name} (${email})`);
+  console.log(`[Contact API] Message successfully routed to Company Board (${contactEntry.recipient}) from ${name} (${email})`);
 
   res.json({
     success: true,
-    recipient: 'editorial@bitcointrendelite.com',
-    message: 'Your dispatch has been transmitted to Bitcoin Trend Elite.'
+    recipient: 'contact@bitcointrendelite.com',
+    message: 'Your dispatch has been transmitted to Bitcoin Trend Elite Company Board.'
   });
 });
 
