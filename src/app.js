@@ -109,7 +109,6 @@ function injectGlobalUIElements() {
           <a href="index.html" class="mobile-nav-link text-on-surface hover:text-primary transition-colors py-2">Home</a>
           <a href="blog.html" class="mobile-nav-link text-on-surface hover:text-primary transition-colors py-2">Blogs</a>
           <a href="about.html" class="mobile-nav-link text-on-surface hover:text-primary transition-colors py-2">About</a>
-          <a href="admin.html" class="mobile-nav-link text-primary border border-primary/30 rounded-xl py-3 hover:bg-primary/10 transition-colors">Admin Gateway</a>
         </nav>
 
         <div class="pt-6 border-t border-outline-variant/30 text-center space-y-3 font-mono text-xs text-on-surface-variant">

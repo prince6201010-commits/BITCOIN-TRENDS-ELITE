@@ -331,11 +331,28 @@ app.get('/about', (req, res) => {
   res.sendFile(path.join(__dirname, 'about.html'));
 });
 
-app.get('/admin', (req, res) => {
+// ─── HIDDEN ADMIN ROUTES ─────────────────────────────────────────────────────
+// Admin panel is accessible ONLY via direct URL — not linked anywhere publicly.
+// /html  — primary hidden entry point (as configured for production)
+// /admin — internal alias (kept for development convenience only)
+const adminNoCache = (req, res, next) => {
+  res.set({
+    'Cache-Control': 'no-store, no-cache, must-revalidate, private',
+    'Pragma':        'no-cache',
+    'Expires':       '0'
+  });
+  next();
+};
+
+app.get('/html', adminNoCache, (req, res) => {
   res.sendFile(path.join(__dirname, 'admin.html'));
 });
 
-app.get('/admin/dashboard', (req, res) => {
+app.get('/admin', adminNoCache, (req, res) => {
+  res.sendFile(path.join(__dirname, 'admin.html'));
+});
+
+app.get('/admin/dashboard', adminNoCache, (req, res) => {
   res.sendFile(path.join(__dirname, 'admin.html'));
 });
 

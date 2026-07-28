@@ -3,8 +3,13 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Bitcoin Journal | Editorial Control Panel</title>
-  <meta name="description" content="Admin management portal for Bitcoin Journal dispatches, categories, and settings."/>
+  <title>Bitcoin Trend Elite | Admin</title>
+  <meta name="description" content="Authorised personnel only."/>
+  <!-- Security: prevent search engine indexing and caching of admin page -->
+  <meta name="robots" content="noindex, nofollow, noarchive"/>
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, private"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
 
   <!-- Tailwind CSS & Fonts -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -85,14 +90,9 @@
         </a>
       </div>
 
-      <!-- Tab Switcher -->
-      <div class="flex gap-1 bg-surface-container-low border border-outline-variant/30 rounded-xl p-1 mb-7 relative">
-        <button id="auth-tab-login" onclick="switchAuthTab('login')" class="flex-1 py-2 rounded-lg font-mono text-xs uppercase tracking-widest transition-all bg-primary text-black font-bold shadow-sm">
-          Sign In
-        </button>
-        <button id="auth-tab-register" onclick="switchAuthTab('register')" class="flex-1 py-2 rounded-lg font-mono text-xs uppercase tracking-widest transition-all text-on-surface-variant hover:text-on-surface">
-          Sign Up
-        </button>
+      <!-- Admin Login Header -->
+      <div class="mb-7 relative">
+        <p class="font-mono text-xs uppercase tracking-widest text-on-surface-variant/60 text-center">Authorised Access Only</p>
       </div>
 
       <!-- Shared Error Display -->
@@ -120,42 +120,8 @@
           <span>Sign In to Dashboard</span>
           <span class="material-symbols-outlined text-sm">login</span>
         </button>
-        <p class="text-center font-mono text-[11px] text-on-surface-variant/60">
-          New here? <button type="button" onclick="switchAuthTab('register')" class="text-primary hover:underline">Create an account →</button>
-        </p>
       </form>
 
-      <!-- ── SIGN UP FORM ── -->
-      <form id="register-form" class="hidden space-y-5">
-        <div>
-          <label class="block font-mono text-xs uppercase tracking-wider text-on-surface-variant mb-2" for="reg-email">Email Address</label>
-          <input id="reg-email" type="email" required placeholder="neweditor@bitcoinjournal.io"
-            class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface placeholder:text-on-surface-variant/40 focus:border-primary outline-none font-mono text-sm transition-all"/>
-        </div>
-        <div>
-          <label class="block font-mono text-xs uppercase tracking-wider text-on-surface-variant mb-2" for="reg-password">Password</label>
-          <div class="relative">
-            <input id="reg-password" type="password" required minlength="6" placeholder="Min. 6 characters"
-              class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 pr-12 text-on-surface placeholder:text-on-surface-variant/40 focus:border-primary outline-none font-mono text-sm transition-all"/>
-            <button type="button" onclick="togglePwd('reg-password','eye-reg')" class="absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors">
-              <span id="eye-reg" class="material-symbols-outlined text-lg">visibility</span>
-            </button>
-          </div>
-        </div>
-        <div>
-          <label class="block font-mono text-xs uppercase tracking-wider text-on-surface-variant mb-2" for="reg-confirm">Confirm Password</label>
-          <input id="reg-confirm" type="password" required placeholder="Re-enter password"
-            class="w-full bg-surface-container-low border border-outline-variant/50 rounded-xl px-4 py-3 text-on-surface placeholder:text-on-surface-variant/40 focus:border-primary outline-none font-mono text-sm transition-all"/>
-        </div>
-        <button type="submit" id="register-btn"
-          class="w-full bg-gradient-to-r from-primary-container to-primary text-black font-mono font-bold uppercase tracking-widest text-xs py-3.5 rounded-xl hover:brightness-110 active:scale-[0.99] transition-all shadow-lg shadow-primary-container/20 flex items-center justify-center gap-2">
-          <span>Create Admin Account</span>
-          <span class="material-symbols-outlined text-sm">person_add</span>
-        </button>
-        <p class="text-center font-mono text-[11px] text-on-surface-variant/60">
-          Already registered? <button type="button" onclick="switchAuthTab('login')" class="text-primary hover:underline">Sign in →</button>
-        </p>
-      </form>
     </div>
   </div>
 
@@ -600,27 +566,12 @@
   <!-- Non-module helper for UI tabs -->
   <script>
     function switchAuthTab(tab) {
+      // Registration is disabled. This function is kept for compatibility only.
+      // Only 'login' tab is permitted.
       const loginForm = document.getElementById('login-form');
-      const registerForm = document.getElementById('register-form');
-      const tabLogin = document.getElementById('auth-tab-login');
-      const tabReg = document.getElementById('auth-tab-register');
       const authError = document.getElementById('auth-error');
       if (authError) { authError.classList.add('hidden'); authError.textContent = ''; }
-
-      const activeClass = 'flex-1 py-2 rounded-lg font-mono text-xs uppercase tracking-widest transition-all bg-primary text-black font-bold shadow-sm';
-      const inactiveClass = 'flex-1 py-2 rounded-lg font-mono text-xs uppercase tracking-widest transition-all text-on-surface-variant hover:text-on-surface';
-
-      if (tab === 'login') {
-        loginForm.classList.remove('hidden');
-        registerForm.classList.add('hidden');
-        tabLogin.className = activeClass;
-        tabReg.className = inactiveClass;
-      } else {
-        registerForm.classList.remove('hidden');
-        loginForm.classList.add('hidden');
-        tabReg.className = activeClass;
-        tabLogin.className = inactiveClass;
-      }
+      if (loginForm) loginForm.classList.remove('hidden');
     }
 
     function togglePwd(inputId, eyeId) {
@@ -867,52 +818,6 @@
       }
     });
 
-    // ─── SIGN UP FORM SUBMIT HANDLER ──────────────────────────────────────────
-    registerForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      if (authError) {
-        authError.classList.add('hidden');
-        authError.textContent = '';
-      }
-
-      const email    = document.getElementById('reg-email').value.trim();
-      const password = document.getElementById('reg-password').value;
-      const confirm  = document.getElementById('reg-confirm').value;
-
-      if (password !== confirm) {
-        const msg = 'Passwords do not match. Please re-enter.';
-        if (authError) {
-          authError.textContent = msg;
-          authError.classList.remove('hidden');
-        }
-        showToast(msg, 'error');
-        return;
-      }
-
-      console.log('[Auth] Attempting Admin Registration for:', email);
-
-      // Loading state
-      registerBtn.disabled = true;
-      registerBtn.innerHTML = `<span class="animate-spin material-symbols-outlined text-sm">progress_activity</span> Creating account...`;
-
-      try {
-        const credential = await createUserWithEmailAndPassword(auth, email, password);
-        console.log('[Auth] Admin Registration successful! User ID:', credential.user.uid);
-        showToast('Admin account created successfully. Welcome!');
-      } catch (err) {
-        console.error('[Auth] Registration FAILED:', err.code, err.message);
-        const userMsg = friendlyAuthError(err.code) || err.message || 'Registration failed.';
-        if (authError) {
-          authError.textContent = userMsg;
-          authError.classList.remove('hidden');
-        }
-        showToast(userMsg, 'error');
-      } finally {
-        registerBtn.disabled = false;
-        registerBtn.innerHTML = `<span>Create Admin Account</span><span class="material-symbols-outlined text-sm">person_add</span>`;
-      }
-    });
-
     // ─── SIGN OUT HANDLER ─────────────────────────────────────────────────────
     logoutBtn.addEventListener('click', async () => {
       console.log('[Auth] Signing out user...');
@@ -920,6 +825,11 @@
         await signOut(auth);
         console.log('[Auth] Signed out successfully.');
         showToast('Logged out successfully.');
+        // Prevent back-button from restoring authenticated dashboard view
+        history.pushState(null, '', window.location.href);
+        window.addEventListener('popstate', () => {
+          history.pushState(null, '', window.location.href);
+        });
       } catch (err) {
         console.error('[Auth] Sign out error:', err);
         showToast('Sign out error. Please try again.', 'error');
