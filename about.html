@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>About & Editorial Manifesto | Bitcoin Journal</title>
+  <meta name="description" content="Chronicles of digital absolute scarcity, Austrian monetary policy, and cypherpunk code."/>
+
+  <!-- Tailwind CSS & Fonts -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@300..700&family=Geist:wght@100..900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            surface: "#121414",
+            "surface-container": "#1e2020",
+            "surface-container-low": "#1a1c1c",
+            "surface-container-high": "#282a2b",
+            "surface-container-highest": "#333535",
+            primary: "#ffb874",
+            "primary-container": "#f7931a",
+            "on-surface": "#e2e2e2",
+            "on-surface-variant": "#dbc2ae",
+            "outline-variant": "#554335"
+          },
+          fontFamily: {
+            display: ["Playfair Display", "serif"],
+            mono: ["Space Grotesk", "sans-serif"],
+            body: ["Geist", "Inter", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex flex-col selection:bg-primary selection:text-black">
+  <div class="grain"></div>
+
+  <!-- Transparent Glass Navigation -->
+  <header id="main-header" class="glass-header fixed top-0 w-full z-50 py-4 transition-all duration-300">
+    <div class="flex justify-between items-center px-6 md:px-16 max-w-screen-2xl mx-auto">
+      <a class="font-display text-xl md:text-2xl font-bold text-primary tracking-tighter flex items-center gap-2" href="index.html" aria-label="Bitcoin Journal Home">
+        <span class="material-symbols-outlined text-primary text-2xl md:text-3xl">currency_bitcoin</span>
+        <span>Bitcoin Journal</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex items-center space-x-10" aria-label="Main Navigation">
+        <a class="font-mono text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+        <a class="font-mono text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="blog.html">Blogs</a>
+        <a class="font-mono text-xs uppercase tracking-wider text-primary border-b-2 border-primary pb-1" href="about.html">About</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="flex items-center space-x-4 md:space-x-6">
+        <button class="search-btn text-on-surface-variant hover:text-primary transition-all p-2 rounded-full hover:bg-white/5" aria-label="Search dispatches">
+          <span class="material-symbols-outlined text-2xl">search</span>
+        </button>
+        <button class="mobile-toggle-btn md:hidden text-on-surface-variant hover:text-primary p-2" aria-label="Toggle Navigation">
+          <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-28 pb-24 flex-grow">
+    <!-- Hero Manifesto Banner -->
+    <section class="max-w-screen-2xl mx-auto px-6 md:px-16 mb-20">
+      <div class="bg-gradient-to-b from-surface-container to-surface-container-low border border-outline-variant/30 rounded-3xl p-8 md:p-16 relative overflow-hidden shadow-2xl">
+        <div class="absolute -top-32 -right-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+        <div class="relative z-10 max-w-4xl space-y-6">
+          <span class="font-mono text-xs uppercase tracking-[0.3em] text-primary font-bold">Editorial Vision</span>
+          <h1 class="font-display text-4xl md:text-7xl font-bold text-on-surface leading-tight tracking-tight">
+            A Sanctuary for the Sovereign Individual
+          </h1>
+          <p class="font-body text-xl md:text-2xl text-on-surface-variant font-light leading-relaxed">
+            Bitcoin Journal exists to chronicle the cultural, economic, and philosophical evolution driven by digital absolute scarcity. We operate at the intersection of Austrian economics, cypherpunk code, and human autonomy.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Pillars -->
+    <section class="max-w-screen-2xl mx-auto px-6 md:px-16 mb-24">
+      <div class="mb-12">
+        <span class="font-mono text-xs uppercase tracking-widest text-primary block mb-2 font-bold">Philosophical Foundation</span>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-on-surface">The Three Pillars</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-surface-container/60 border border-outline-variant/30 rounded-2xl p-8 space-y-4 hover:border-primary/40 transition-all shadow-xl">
+          <span class="material-symbols-outlined text-primary text-4xl">lock</span>
+          <h3 class="font-display text-2xl font-bold text-on-surface">Absolute Scarcity</h3>
+          <p class="font-body text-on-surface-variant text-base leading-relaxed opacity-85">
+            For the first time in human history, an asset exists with a strictly finite supply enforced by mathematics, defying arbitrary monetary inflation.
+          </p>
+        </div>
+
+        <div class="bg-surface-container/60 border border-outline-variant/30 rounded-2xl p-8 space-y-4 hover:border-primary/40 transition-all shadow-xl">
+          <span class="material-symbols-outlined text-primary text-4xl">vpn_key</span>
+          <h3 class="font-display text-2xl font-bold text-on-surface">Cypherpunk Autonomy</h3>
+          <p class="font-body text-on-surface-variant text-base leading-relaxed opacity-85">
+            Self-custody and cryptographic keys restore sovereign property rights to the individual without reliance on centralized intermediaries.
+          </p>
+        </div>
+
+        <div class="bg-surface-container/60 border border-outline-variant/30 rounded-2xl p-8 space-y-4 hover:border-primary/40 transition-all shadow-xl">
+          <span class="material-symbols-outlined text-primary text-4xl">bolt</span>
+          <h3 class="font-display text-2xl font-bold text-on-surface">Proof of Work</h3>
+          <p class="font-body text-on-surface-variant text-base leading-relaxed opacity-85">
+            Anchored in thermodynamics and real-world energy expenditure, consensus creates unforgeable digital truth across global networks.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership & Transmission Form -->
+    <section class="max-w-screen-2xl mx-auto px-6 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <!-- Editor Bio Card -->
+      <div class="lg:col-span-5 bg-surface-container border border-outline-variant/30 rounded-3xl p-8 space-y-6 flex flex-col justify-between shadow-xl">
+        <div class="space-y-4">
+          <span class="font-mono text-xs uppercase tracking-widest text-primary font-bold">Editorial Board</span>
+          <div class="flex items-center gap-4">
+            <div class="w-16 h-16 rounded-full border-2 border-primary/40 overflow-hidden shrink-0">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW4NNsgeWP4fG2HYdSaAbC_mgWhBdoQistWpgDLc7pPZkgXivDbRenFn6V_zdtyIq6IyoQBWj45oi0Qxpa_RIfmoYgtrICN2AV1YC0gLmQmWEDRpooxoE9BWEqFuoRXI5R-5TBVK2JHgSfrpglFcLUTwnwsCkfKv0xzYlskXMPC_ydQan8WyZzw9rsnnEvqSgYTp46eDk8_7AJuzhmnnxiLJnX-JzCgWa8SualL9dMa71c4MwTxT9QQx311yf_IEV5noDmuLqDk-kL" alt="Bitcoin Trend Elite" class="w-full h-full object-cover"/>
+            </div>
+            <div>
+              <h3 class="font-display text-2xl font-bold text-on-surface">Bitcoin Trend Elite</h3>
+              <p class="font-mono text-xs text-on-surface-variant opacity-75">Editorial Board & Research Fellows</p>
+            </div>
+          </div>
+          <p class="font-body text-on-surface-variant text-sm leading-relaxed pt-4 border-t border-outline-variant/20">
+            Dedicated to research across cryptographic permanence, Austrian monetary policy, and open-source decentralized systems.
+          </p>
+        </div>
+
+        <div class="pt-6 border-t border-outline-variant/20 font-mono text-xs text-on-surface-variant space-y-1">
+          <p>Encrypted Dispatch: <span class="text-primary font-bold">editorial@bitcointrendelite.com</span></p>
+          <p>Location: Sovereign Digital Domain</p>
+        </div>
+      </div>
+
+      <!-- Functional Contact Form -->
+      <div id="contact" class="lg:col-span-7 bg-surface-container-low border border-outline-variant/30 rounded-3xl p-8 md:p-10 space-y-6 shadow-xl">
+        <div>
+          <span class="font-mono text-xs uppercase tracking-widest text-primary font-bold">Inquiries & Transmissions</span>
+          <h2 class="font-display text-3xl font-bold text-on-surface mt-1">Transmit to the Editorial Board</h2>
+        </div>
+
+        <form id="contact-form" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block font-mono text-xs uppercase text-on-surface-variant mb-1" for="c-name">Name *</label>
+              <input id="c-name" type="text" required placeholder="Satoshi Nakamoto" class="w-full bg-surface-container border border-outline-variant/40 rounded-xl px-4 py-3 text-xs text-on-surface focus:border-primary outline-none font-mono"/>
+            </div>
+            <div>
+              <label class="block font-mono text-xs uppercase text-on-surface-variant mb-1" for="c-email">Email *</label>
+              <input id="c-email" type="email" required placeholder="user@domain.com" class="w-full bg-surface-container border border-outline-variant/40 rounded-xl px-4 py-3 text-xs text-on-surface focus:border-primary outline-none font-mono"/>
+            </div>
+          </div>
+
+          <div>
+            <label class="block font-mono text-xs uppercase text-on-surface-variant mb-1" for="c-subject">Subject</label>
+            <input id="c-subject" type="text" placeholder="Editorial Inquiry / Contribution" class="w-full bg-surface-container border border-outline-variant/40 rounded-xl px-4 py-3 text-xs text-on-surface focus:border-primary outline-none font-mono"/>
+          </div>
+
+          <div>
+            <label class="block font-mono text-xs uppercase text-on-surface-variant mb-1" for="c-message">Message *</label>
+            <textarea id="c-message" rows="4" required placeholder="Write your transmission..." class="w-full bg-surface-container border border-outline-variant/40 rounded-xl px-4 py-3 text-sm text-on-surface focus:border-primary outline-none font-body"></textarea>
+          </div>
+
+          <button type="submit" class="bg-primary text-black font-mono font-bold text-xs uppercase tracking-wider px-8 py-3.5 rounded-xl hover:brightness-110 active:scale-[0.98] transition-all shadow-md shadow-primary/10 flex items-center gap-2">
+            <span>Transmit Message</span>
+            <span class="material-symbols-outlined text-sm">send</span>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="w-full bg-surface-container-lowest border-t border-outline-variant/20 mt-auto">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 px-6 md:px-16 py-16 max-w-screen-2xl mx-auto">
+      <div class="md:col-span-4 space-y-4">
+        <a class="font-display text-2xl text-primary font-bold flex items-center gap-2" href="index.html">
+          <span class="material-symbols-outlined text-primary text-3xl">currency_bitcoin</span>
+          <span>Bitcoin Journal</span>
+        </a>
+        <p class="font-body text-sm text-on-surface-variant opacity-80 max-w-xs leading-relaxed">
+          An immersive editorial platform dedicated to exploring the intersection of cryptography, economics, and human culture.
+        </p>
+      </div>
+
+      <div class="md:col-span-2 space-y-4">
+        <h4 class="font-mono text-xs text-on-surface uppercase opacity-50 tracking-wider">Navigation</h4>
+        <ul class="space-y-2.5 font-body text-sm text-on-surface-variant">
+          <li><a class="hover:text-primary transition-colors" href="index.html">Home</a></li>
+          <li><a class="hover:text-primary transition-colors" href="blog.html">Blog Archives</a></li>
+          <li><a class="hover:text-primary transition-colors" href="about.html">About & Manifesto</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-2 space-y-4">
+        <h4 class="font-mono text-xs text-on-surface uppercase opacity-50 tracking-wider">Legal & Access</h4>
+        <ul class="space-y-2.5 font-body text-sm text-on-surface-variant">
+          <li><a class="hover:text-primary transition-colors" href="about.html">Editorial Policy</a></li>
+          <li><a class="hover:text-primary transition-colors" href="about.html">Privacy</a></li>
+          <li><a class="hover:text-primary transition-colors" href="about.html#contact">Contact</a></li>
+          <li><a class="hover:text-primary transition-colors text-primary font-mono" href="admin.html">Admin Gateway</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-4 space-y-4">
+        <h4 class="font-mono text-xs text-on-surface uppercase opacity-50 tracking-wider">Connect</h4>
+        <div class="flex space-x-6">
+          <a class="text-on-surface-variant hover:text-primary transition-colors" href="#" aria-label="Email"><span class="material-symbols-outlined text-2xl">alternate_email</span></a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors" href="#" aria-label="RSS Feed"><span class="material-symbols-outlined text-2xl">rss_feed</span></a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors" href="#" aria-label="Network"><span class="material-symbols-outlined text-2xl">language</span></a>
+        </div>
+      </div>
+
+      <div class="md:col-span-12 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center text-xs font-mono opacity-60 space-y-2 md:space-y-0">
+        <p>© 2024 Bitcoin Journal. The Cultural Evolution of Bitcoin.</p>
+        <p data-stat="block-height">Block Height: 841,234</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/app.js"></script>
+</body>
+</html>

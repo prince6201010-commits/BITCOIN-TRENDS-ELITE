@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Editorial Archives & Categories | Bitcoin Journal</title>
+  <meta name="description" content="Explore categorized publications in Austrian economics, cypherpunk philosophy, technology, history, and culture."/>
+
+  <!-- Tailwind CSS & Fonts -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@300..700&family=Geist:wght@100..900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            surface: "#121414",
+            "surface-container": "#1e2020",
+            "surface-container-low": "#1a1c1c",
+            "surface-container-high": "#282a2b",
+            "surface-container-highest": "#333535",
+            primary: "#ffb874",
+            "primary-container": "#f7931a",
+            "on-surface": "#e2e2e2",
+            "on-surface-variant": "#dbc2ae",
+            "outline-variant": "#554335"
+          },
+          fontFamily: {
+            display: ["Playfair Display", "serif"],
+            mono: ["Space Grotesk", "sans-serif"],
+            body: ["Geist", "Inter", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex flex-col selection:bg-primary selection:text-black">
+  <div class="grain"></div>
+
+  <!-- Transparent Glass Navigation -->
+  <header id="main-header" class="glass-header fixed top-0 w-full z-50 py-4 transition-all duration-300">
+    <div class="flex justify-between items-center px-6 md:px-16 max-w-screen-2xl mx-auto">
+      <a class="font-display text-xl md:text-2xl font-bold text-primary tracking-tighter flex items-center gap-2" href="index.html" aria-label="Bitcoin Journal Home">
+        <span class="material-symbols-outlined text-primary text-2xl md:text-3xl">currency_bitcoin</span>
+        <span>Bitcoin Journal</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex items-center space-x-10" aria-label="Main Navigation">
+        <a class="font-mono text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+        <a class="font-mono text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="blog.html">Blogs</a>
+        <a class="font-mono text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="about.html">About</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="flex items-center space-x-4 md:space-x-6">
+        <button class="search-btn text-on-surface-variant hover:text-primary transition-all p-2 rounded-full hover:bg-white/5" aria-label="Search dispatches">
+          <span class="material-symbols-outlined text-2xl">search</span>
+        </button>
+        <button class="mobile-toggle-btn md:hidden text-on-surface-variant hover:text-primary p-2" aria-label="Toggle Navigation">
+          <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-28 pb-24 max-w-screen-2xl mx-auto px-6 md:px-16 flex-grow">
+    <!-- Header Banner -->
+    <div class="space-y-4 mb-12 border-b border-outline-variant/20 pb-8">
+      <span class="font-mono text-xs uppercase tracking-[0.3em] text-primary font-bold">Curated Index</span>
+      <h1 class="font-display text-4xl md:text-6xl font-bold text-on-surface">The Editorial Archives</h1>
+      <p class="font-body text-lg text-on-surface-variant max-w-3xl font-light">Explore publications categorized by Austrian economics, cypherpunk philosophy, technological advancements, and sovereign culture.</p>
+    </div>
+
+    <!-- Category Filter Bar & Live Search -->
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-12">
+      <!-- Filter Pills -->
+      <div class="flex flex-wrap items-center gap-3 md:gap-4" id="category-pills">
+        <button data-cat="ALL" data-name="All Dispatches" class="cat-pill-active px-7 py-3.5 md:px-9 md:py-4 rounded-2xl font-mono text-sm md:text-base uppercase tracking-wider font-bold transition-all duration-300 shadow-xl cursor-pointer">All Dispatches</button>
+        <!-- Dynamic category pills injected here by JS -->
+      </div>
+
+      <!-- Search Input -->
+      <div class="relative w-full lg:w-80">
+        <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant/60 text-lg">search</span>
+        <input id="cat-search-input" type="text" placeholder="Search archives..." class="w-full bg-surface-container-low border border-outline-variant/40 rounded-full pl-10 pr-4 py-2 text-xs font-mono text-on-surface focus:border-primary outline-none transition-all"/>
+      </div>
+    </div>
+
+    <!-- Grid Container -->
+    <div id="category-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="col-span-full py-16 text-center text-on-surface-variant font-mono text-sm">
+        <span class="material-symbols-outlined text-4xl text-primary animate-spin mb-2">progress_activity</span>
+        <p>Loading curated archives from Firestore...</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="w-full bg-surface-container-lowest border-t border-outline-variant/20 mt-auto">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 px-6 md:px-16 py-16 max-w-screen-2xl mx-auto">
+      <div class="md:col-span-4 space-y-4">
+        <a class="font-display text-2xl text-primary font-bold flex items-center gap-2" href="index.html">
+          <span class="material-symbols-outlined text-primary text-3xl">currency_bitcoin</span>
+          <span>Bitcoin Journal</span>
+        </a>
+        <p class="font-body text-sm text-on-surface-variant opacity-80 max-w-xs leading-relaxed">
+          An immersive editorial platform dedicated to exploring the intersection of cryptography, economics, and human culture.
+        </p>
+      </div>
+
+      <div class="md:col-span-2 space-y-4">
+        <h4 class="font-mono text-xs text-on-surface uppercase opacity-50 tracking-wider">Navigation</h4>
+        <ul class="space-y-2.5 font-body text-sm text-on-surface-variant">
+          <li><a class="hover:text-primary transition-colors" href="index.html">Home</a></li>
+          <li><a class="hover:text-primary transition-colors" href="blog.html">Blog Archives</a></li>
+          <li><a class="hover:text-primary transition-colors" href="about.html">About & Manifesto</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-2 space-y-4">
+        <h4 class="font-mono text-xs text-on-surface uppercase opacity-50 tracking-wider">Legal & Access</h4>
+        <ul class="space-y-2.5 font-body text-sm text-on-surface-variant">
+          <li><a class="hover:text-primary transition-colors" href="about.html">Editorial Policy</a></li>
+          <li><a class="hover:text-primary transition-colors" href="about.html">Privacy</a></li>
+          <li><a class="hover:text-primary transition-colors" href="about.html#contact">Contact</a></li>
+          <li><a class="hover:text-primary transition-colors text-primary font-mono" href="admin.html">Admin Gateway</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-4 space-y-4">
+        <h4 class="font-mono text-xs text-on-surface uppercase opacity-50 tracking-wider">Connect</h4>
+        <div class="flex space-x-6">
+          <a class="text-on-surface-variant hover:text-primary transition-colors" href="#" aria-label="Email"><span class="material-symbols-outlined text-2xl">alternate_email</span></a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors" href="#" aria-label="RSS Feed"><span class="material-symbols-outlined text-2xl">rss_feed</span></a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors" href="#" aria-label="Network"><span class="material-symbols-outlined text-2xl">language</span></a>
+        </div>
+      </div>
+
+      <div class="md:col-span-12 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center text-xs font-mono opacity-60 space-y-2 md:space-y-0">
+        <p>© 2024 Bitcoin Journal. The Cultural Evolution of Bitcoin.</p>
+        <p data-stat="block-height">Block Height: 841,234</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/app.js"></script>
+  <script type="module">
+    import { initHomeBlogsListener, initCategoriesListener } from '/src/firebase-public.js';
+
+    let allBlogs = [];
+    let activeCategory = 'ALL';  // 'ALL' or a Firestore category ID
+    let activeCategoryName = ''; // for legacy matching
+    let dynamicCategories = [];
+
+    const gridEl = document.getElementById('category-grid');
+    const searchInput = document.getElementById('cat-search-input');
+    const pillContainer = document.getElementById('category-pills');
+
+    // ── Dynamic category pills ──────────────────────────────────────────────
+    function renderCategoryPills() {
+      const allPill = pillContainer.querySelector('[data-cat="ALL"]');
+      pillContainer.innerHTML = '';
+      pillContainer.appendChild(allPill);
+
+      dynamicCategories.forEach(cat => {
+        const btn = document.createElement('button');
+        btn.dataset.cat  = cat.id;
+        btn.dataset.name = cat.name;
+        btn.textContent  = cat.name;
+        btn.className = 'cat-pill-inactive px-7 py-3.5 md:px-9 md:py-4 rounded-2xl font-mono text-sm md:text-base uppercase tracking-wider font-bold transition-all duration-300 shadow-md cursor-pointer';
+        if (activeCategory === cat.id) {
+          btn.className = 'cat-pill-active px-7 py-3.5 md:px-9 md:py-4 rounded-2xl font-mono text-sm md:text-base uppercase tracking-wider font-bold transition-all duration-300 shadow-xl cursor-pointer';
+        }
+        pillContainer.appendChild(btn);
+      });
+
+      // Attach click handlers
+      pillContainer.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          pillContainer.querySelectorAll('button').forEach(b => {
+            b.className = 'cat-pill-inactive px-7 py-3.5 md:px-9 md:py-4 rounded-2xl font-mono text-sm md:text-base uppercase tracking-wider font-bold transition-all duration-300 shadow-md cursor-pointer';
+          });
+          btn.className = 'cat-pill-active px-7 py-3.5 md:px-9 md:py-4 rounded-2xl font-mono text-sm md:text-base uppercase tracking-wider font-bold transition-all duration-300 shadow-xl cursor-pointer';
+          activeCategory     = btn.dataset.cat;
+          activeCategoryName = btn.dataset.name || '';
+          renderCategoryGrid();
+        });
+      });
+    }
+
+    const defaultArchives = [
+      {
+        id: 'sovereignty-private-key',
+        slug: 'sovereignty-private-key',
+        title: 'The Sovereignty of the Private Key',
+        category: 'Bitcoin',
+        readTime: '12 Min Read',
+        author: 'Elias Thorne',
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB-sTPQESIBdIhICUMh9Ckd08_dxtQklxCVYbhmEL-m3HNhh8T7XSqLCGYPfxiN5ds0wL6Vnw6Zd9_gQoG9vnhTrTw9id_bPO2LOVzM7iw_hsSYOop56XS8P54nNsf75eh31da_wt-uOVyDoyv-a7XHn1qjniIQwCH-ES1_HT4BS9ABBNt7wEIRE_YfqsJYee9kozGMncMUP_3aaO7o3gJvzhqAibd5H_QPlxpFkWhF4c86DsmT9TN1IX-GkByqEALh86c_xLZnv7H3',
+        snippet: 'In the digital landscape of the twenty-first century, ownership is rewritten in cryptography.'
+      },
+      {
+        id: 'case-for-digital-scarcity',
+        slug: 'case-for-digital-scarcity',
+        title: 'A Case for Digital Absolute Scarcity',
+        category: 'Bitcoin',
+        readTime: '10 Min Read',
+        author: 'Hal Finney',
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB1wz8cowi1U10l1HhzRKBmR-3HzXMkkrIIFpWM5fwCD7I6e_NVzvwKu7p5qf7_dP_am9XbIN6_7uJHDQlPlGvR8X9GAkqEt0ZkzhHGQ8UHs_HUxgMvxYLIoQkG3GhpCV52JRozJQ3Uj1OEz1MO79Vv2DkqABMfYzsKml8RKpENH9-SxNYzCSs5Ded98zVK4NtmQnRvqjIF6LCRG1j-2f-VMxmwA3bFm3UyKmiP2xKkLgKHMKA5yPNDx7nMKzSXW5nIQd3DrjO5n7WF',
+        snippet: 'How the invention of Bitcoin solved the double-spend problem and redefined the nature of money forever.'
+      },
+      {
+        id: 'prehistory-electronic-cash',
+        slug: 'prehistory-electronic-cash',
+        title: 'The Prehistory of Electronic Cash',
+        category: 'News',
+        readTime: '14 Min Read',
+        author: 'Nick Szabo',
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAtLHCUrUMoRmpwsr013e3jx_dqH4u3PMA19-qB8jYXNCGX7rLVqXtuqXlDdbTxdrXoWEpEayQpm3lOH9Fo8pF1dkjyrJwkV-D_PWKnfVmQldxs-Om_d6IeIzjJ83usApvLxFSourC93WIcy5mAmL7DrGUVSHj5lQu-Ey3TujgHopdqd9SiCPcUuEPgPnq4I2wnR64EsbpPov00z58lpaR2bOKuMG2bz4uI2z6laDicq-gJZZhFYKdiEZlXRybiSqfu4qL2CEcJn3b0',
+        snippet: "From DigiCash to B-Money and Bit Gold: tracing the thirty-year lineage that culminated in Satoshi Nakamoto's whitepaper."
+      },
+      {
+        id: 'consensus-global-rules',
+        slug: 'consensus-global-rules',
+        title: 'Consensus: The Logic of Global Rules',
+        category: 'Trends',
+        readTime: '4 Min Read',
+        author: 'Saifedean Ammous',
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDUtfr7qjviOC1aev4m5jui6b4Gd4SS0m4HNzf3crAWzLdTgijZHWgMuwtd3N4gcggal4ANuK07Hakdi6jGGpxJBAhgyWH-196acGlrvFqgPytROVMc4iIlFOL0QwHVuMAneX63tLmnLkXrvQj5Zq6uNiyhtdn4Xj7CfEIN1RJSX-_oYXSwXHKgO2stB_RZRxhd9HN2HVytlOzcwEAEiD4NJKxzMoLQF5edOi9CiGV4gXmiAsZJoliLR56NeQDyI4T5ODmAYWttrU32',
+        snippet: 'Why decentralized governance and unalterable rules are the only viable path for a global monetary network.'
+      }
+    ];
+
+    // Load categories dynamically
+    initCategoriesListener((cats) => {
+      dynamicCategories = cats;
+      renderCategoryPills();
+      renderCategoryGrid();
+    });
+
+    // Load blogs dynamically
+    initHomeBlogsListener((blogs) => {
+      allBlogs = (!blogs || blogs.length === 0) ? defaultArchives : blogs;
+      renderCategoryGrid();
+    });
+
+    searchInput.addEventListener('input', renderCategoryGrid);
+
+    function renderCategoryGrid() {
+      const q = searchInput.value.toLowerCase().trim();
+      const filtered = allBlogs.filter(b => {
+        let matchCat = activeCategory === 'ALL';
+        if (!matchCat) {
+          // Match by categoryId (new) or legacy category string
+          matchCat = b.categoryId === activeCategory ||
+            (!b.categoryId && b.category &&
+              b.category.toLowerCase() === activeCategoryName.toLowerCase());
+        }
+        const matchText = !q || (b.title && b.title.toLowerCase().includes(q)) || (b.snippet && b.snippet.toLowerCase().includes(q));
+        return matchCat && matchText;
+      });
+
+      if (filtered.length === 0) {
+        gridEl.innerHTML = `
+          <div class="col-span-full py-16 text-center text-on-surface-variant font-mono text-sm bg-surface-container-low rounded-3xl border border-outline-variant/30">
+            <span class="material-symbols-outlined text-4xl text-on-surface-variant/40 mb-2">find_in_page</span>
+            <p>No dispatches found matching "${activeCategoryName || activeCategory}".</p>
+          </div>
+        `;
+        return;
+      }
+
+      gridEl.innerHTML = filtered.map(blog => {
+        const link = `blog.html?slug=${encodeURIComponent(blog.slug || blog.id)}`;
+        const img = blog.image || 'https://lh3.googleusercontent.com/aida-public/AB6AXuDUtfr7qjviOC1aev4m5jui6b4Gd4SS0m4HNzf3crAWzLdTgijZHWgMuwtd3N4gcggal4ANuK07Hakdi6jGGpxJBAhgyWH-196acGlrvFqgPytROVMc4iIlFOL0QwHVuMAneX63tLmnLkXrvQj5Zq6uNiyhtdn4Xj7CfEIN1RJSX-_oYXSwXHKgO2stB_RZRxhd9HN2HVytlOzcwEAEiD4NJKxzMoLQF5edOi9CiGV4gXmiAsZJoliLR56NeQDyI4T5ODmAYWttrU32';
+        const catLabel = blog.categoryName || blog.category || 'Dispatch';
+        return `
+          <a href="${link}" class="group block bg-surface-container/60 border border-outline-variant/30 hover:border-primary/50 rounded-2xl overflow-hidden transition-all duration-300 shadow-xl">
+            <div class="aspect-[16/9] overflow-hidden relative bg-surface-container-high">
+              <img src="${img}" alt="${blog.title}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+              <span class="absolute top-4 left-4 bg-black/75 backdrop-blur-md text-primary border border-primary/30 font-mono text-[10px] uppercase px-3 py-1 rounded-md font-bold">${catLabel}</span>
+            </div>
+            <div class="p-6 space-y-3">
+              <h3 class="font-display text-xl font-bold text-on-surface group-hover:text-primary transition-colors line-clamp-2 leading-tight">${blog.title}</h3>
+              <p class="font-body text-sm text-on-surface-variant line-clamp-3 opacity-80">${blog.snippet || ''}</p>
+              <div class="pt-4 border-t border-outline-variant/20 flex items-center justify-between font-mono text-xs text-on-surface-variant/70">
+                <span>${blog.author || 'Elias Thorne'}</span>
+                <span>${blog.readTime || '5 min'}</span>
+              </div>
+            </div>
+          </a>
+        `;
+      }).join('');
+    }
+  </script>
+</body>
+</html>
+

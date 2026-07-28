@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Bitcoin Journal | The Cultural Evolution of Sovereign Money</title>
+  <meta name="description" content="An immersive editorial sanctuary chronicling Austrian economics, cypherpunk philosophy, and digital scarcity."/>
+  
+  <!-- Tailwind CSS & Fonts -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@300..700&family=Geist:wght@100..900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            surface: "#121414",
+            "surface-container": "#1e2020",
+            "surface-container-low": "#1a1c1c",
+            "surface-container-high": "#282a2b",
+            "surface-container-highest": "#333535",
+            primary: "#ffb874",
+            "primary-container": "#f7931a",
+            "on-surface": "#e2e2e2",
+            "on-surface-variant": "#dbc2ae",
+            "outline-variant": "#554335"
+          },
+          fontFamily: {
+            display: ["Playfair Display", "serif"],
+            mono: ["Space Grotesk", "sans-serif"],
+            body: ["Geist", "Inter", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-black">
+  <div class="grain"></div>
+
+  <!-- Glassmorphic Header Navigation -->
+  <header id="main-header" class="glass-header fixed top-0 w-full z-50 py-4 transition-all duration-300">
+    <div class="flex justify-between items-center px-6 md:px-16 max-w-screen-2xl mx-auto">
+      <a class="font-display text-xl md:text-2xl font-bold text-primary tracking-tighter flex items-center gap-2" href="index.html" aria-label="Bitcoin Journal Home">
+        <span class="material-symbols-outlined text-primary text-2xl md:text-3xl">currency_bitcoin</span>
+        <span>Bitcoin Journal</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex items-center space-x-10" aria-label="Main Navigation">
+        <a class="font-mono text-xs uppercase tracking-wider text-primary border-b-2 border-primary pb-1" href="index.html">Home</a>
+        <a class="font-mono text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="blog.html">Blogs</a>
+        <a class="font-mono text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="about.html">About</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="flex items-center space-x-4 md:space-x-6">
+        <button class="search-btn text-on-surface-variant hover:text-primary transition-all p-2 rounded-full hover:bg-white/5" aria-label="Search dispatches">
+          <span class="material-symbols-outlined text-2xl">search</span>
+        </button>
+
+        <!-- Mobile Drawer Toggle -->
+        <button class="mobile-toggle-btn md:hidden text-on-surface-variant hover:text-primary p-2" aria-label="Toggle Navigation">
+          <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Frame Scroll Animation Hero Section (210 Frames) -->
+    <section id="scroll-animation-section" class="relative">
+      <div class="sticky-canvas-container">
+        <canvas id="hero-canvas"></canvas>
+        <div class="canvas-overlay-vignette"></div>
+
+        <!-- Canvas Hero Text Overlay -->
+        <div class="canvas-hero-text">
+          <span class="font-mono text-xs text-primary tracking-[0.4em] uppercase block mb-4 animate-fadeInUp">Volume 01 — Issue IV</span>
+          <h1 class="font-display text-4xl sm:text-6xl md:text-8xl text-on-surface leading-tight mb-6 font-bold tracking-tight">
+            The Cultural Evolution <br/>of <span class="text-gradient-gold italic">Bitcoin</span>
+          </h1>
+          <p class="font-body text-base md:text-xl text-on-surface-variant max-w-2xl mx-auto font-light leading-relaxed mb-8">
+            Exploring the intersection of Austrian economics, cypherpunk philosophy, and the global shift toward sovereign digital assets.
+          </p>
+          <div>
+            <a href="blog.html" class="group inline-flex items-center space-x-4 text-primary hover:text-white transition-colors duration-300">
+              <span class="font-mono text-xs uppercase tracking-widest font-bold">Enter the Sanctuary</span>
+              <div class="w-12 h-[1px] bg-primary group-hover:w-20 transition-all duration-300"></div>
+            </a>
+          </div>
+        </div>
+
+
+
+        <!-- Redesigned Premium Side Slogans (Disappear smoothly when visitor scrolls past 40%) -->
+        <div id="side-quote-left" class="side-scroll-quote absolute left-6 lg:left-12 top-1/2 -translate-y-1/2 max-w-xs xl:max-w-sm hidden lg:block pointer-events-none z-30">
+          <div class="bg-surface-container/90 backdrop-blur-xl border-l-4 border-l-primary border border-white/10 p-6 rounded-2xl shadow-2xl space-y-2">
+            <span class="font-mono text-xs text-primary uppercase tracking-[0.2em] block font-bold">Cypherpunk Axiom</span>
+            <p class="font-display font-bold italic text-lg xl:text-xl text-white leading-relaxed tracking-tight">
+              "Privacy is necessary for an open society in the digital age."
+            </p>
+          </div>
+        </div>
+
+        <div id="side-quote-right" class="side-scroll-quote absolute right-6 lg:right-12 top-1/2 -translate-y-1/2 max-w-xs xl:max-w-sm text-right hidden lg:block pointer-events-none z-30">
+          <div class="bg-surface-container/90 backdrop-blur-xl border-r-4 border-r-primary border border-white/10 p-6 rounded-2xl shadow-2xl space-y-2">
+            <span class="font-mono text-xs text-primary uppercase tracking-[0.2em] block font-bold">Austrian Economics</span>
+            <p class="font-display font-bold italic text-lg xl:text-xl text-white leading-relaxed tracking-tight">
+              "Sound money limits power and secures human freedom."
+            </p>
+          </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 pointer-events-none hidden md:flex flex-col items-center gap-1 opacity-70">
+          <span class="font-mono text-[10px] tracking-widest text-primary/80 uppercase">Scroll to explore sequence</span>
+          <span class="material-symbols-outlined text-primary animate-bounce text-sm">expand_more</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pull Quote Section -->
+    <section class="max-w-screen-xl mx-auto py-24 px-6 md:px-16 flex items-center justify-center border-t border-b border-outline-variant/10 my-12">
+      <div class="flex items-center gap-6 max-w-4xl">
+        <div class="w-1.5 h-36 bg-gradient-to-b from-amber-400 to-orange-500 shrink-0 rounded-full"></div>
+        <blockquote class="font-display text-2xl md:text-4xl text-center italic text-on-surface leading-relaxed font-serif">
+          "Bitcoin is not just a currency; it is a new language of property, a consensus mechanism for reality itself."
+        </blockquote>
+        <div class="w-1.5 h-36 bg-gradient-to-b from-amber-400 to-orange-500 shrink-0 rounded-full"></div>
+      </div>
+    </section>
+
+    <!-- Curated Bento Grid Section -->
+    <section id="definitive-collection" class="max-w-screen-2xl mx-auto px-6 md:px-16 py-16">
+      <div class="flex justify-between items-end mb-10">
+        <div>
+          <span class="font-mono text-xs text-primary uppercase tracking-widest block mb-1">Curated</span>
+          <h2 class="font-display text-3xl md:text-5xl font-bold text-on-surface">The Definitive Collection</h2>
+        </div>
+        <a class="font-mono text-xs text-on-surface-variant hover:text-primary border-b border-outline-variant pb-1 transition-colors" href="blog.html">View Archive →</a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 h-auto">
+        <!-- Main Feature Card -->
+        <a href="blog.html?slug=case-for-digital-scarcity" class="md:col-span-8 group relative overflow-hidden rounded-3xl bg-surface-container border border-outline-variant/30 min-h-[420px] block shadow-2xl transition-all duration-500 hover:border-primary/50">
+          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1wz8cowi1U10l1HhzRKBmR-3HzXMkkrIIFpWM5fwCD7I6e_NVzvwKu7p5qf7_dP_am9XbIN6_7uJHDQlPlGvR8X9GAkqEt0ZkzhHGQ8UHs_HUxgMvxYLIoQkG3GhpCV52JRozJQ3Uj1OEz1MO79Vv2DkqABMfYzsKml8RKpENH9-SxNYzCSs5Ded98zVK4NtmQnRvqjIF6LCRG1j-2f-VMxmwA3bFm3UyKmiP2xKkLgKHMKA5yPNDx7nMKzSXW5nIQd3DrjO5n7WF')"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+          <div class="absolute bottom-0 p-8 md:p-12 space-y-4">
+            <span class="inline-block bg-primary/10 border border-primary/30 text-primary px-3 py-1 font-mono text-[10px] uppercase font-bold tracking-widest rounded-md">Bitcoin</span>
+            <h3 class="font-display text-3xl md:text-5xl font-bold text-on-surface group-hover:text-primary transition-colors leading-tight">A Case for Digital Absolute Scarcity</h3>
+            <p class="font-body text-base md:text-lg text-on-surface-variant max-w-xl opacity-90 leading-relaxed">How the invention of Bitcoin solved the double-spend problem and changed the concept of money forever.</p>
+          </div>
+        </a>
+
+        <!-- Side Stack Cards -->
+        <div class="md:col-span-4 grid grid-rows-2 gap-8">
+          <a href="blog.html?slug=prehistory-electronic-cash" class="group relative overflow-hidden rounded-3xl bg-surface-container border border-outline-variant/30 min-h-[220px] block shadow-xl hover:border-primary/50 transition-all">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAtLHCUrUMoRmpwsr013e3jx_dqH4u3PMA19-qB8jYXNCGX7rLVqXtuqXlDdbTxdrXoWEpEayQpm3lOH9Fo8pF1dkjyrJwkV-D_PWKnfVmQldxs-Om_d6IeIzjJ83usApvLxFSourC93WIcy5mAmL7DrGUVSHj5lQu-Ey3TujgHopdqd9SiCPcUuEPgPnq4I2wnR64EsbpPov00z58lpaR2bOKuMG2bz4uI2z6laDicq-gJZZhFYKdiEZlXRybiSqfu4qL2CEcJn3b0')"></div>
+            <div class="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors"></div>
+            <div class="absolute inset-0 p-6 flex flex-col justify-end">
+              <span class="font-mono text-xs text-primary uppercase mb-1">News</span>
+              <h3 class="font-display text-2xl font-bold text-on-surface group-hover:text-primary transition-colors leading-tight">The Prehistory of Electronic Cash</h3>
+            </div>
+          </a>
+
+          <a href="blog.html?slug=who-is-satoshi" class="group relative overflow-hidden rounded-3xl bg-surface-container border border-outline-variant/30 min-h-[220px] block shadow-xl hover:border-primary/50 transition-all">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1LKcR-DwD3GGRwiZOvsQrHiUCfo2Swc8-MRyylfYYVXBeq2-YreDIerJ5Z0uWYBGk2hzK8mcla1fgn0Mzxo2lTz3oXhm9NaQ5ZYMoLd5X1G0KZKjKBVR-ihABlhzejVDN07SPhRmmleSEne9FmI_HV6thUXEKgcviNEoMAK73YhNzMCOYhQQq-gZeSdGNW57ORlQHrsygI6VsFTT0gS0Un0RBvf0lfQc9c8N5dq7S44FV5bLHWDrZN12DCUtd4wbWj84CI-OwTJBT')"></div>
+            <div class="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors"></div>
+            <div class="absolute inset-0 p-6 flex flex-col justify-end">
+              <span class="font-mono text-xs text-primary uppercase mb-1">Trends</span>
+              <h3 class="font-display text-2xl font-bold text-on-surface group-hover:text-primary transition-colors leading-tight">Tracing the Ghost: Who is Satoshi?</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Dispatches Section -->
+    <section class="bg-surface-container-low py-20 border-t border-b border-outline-variant/20">
+      <div class="max-w-screen-2xl mx-auto px-6 md:px-16">
+        <div class="flex justify-between items-end mb-12">
+          <div>
+            <span class="font-mono text-xs text-primary uppercase tracking-widest block mb-1">Latest Dispatches</span>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-on-surface">Fresh Perspectives</h2>
+          </div>
+          <a href="blog.html" class="font-mono text-xs text-primary hover:underline font-bold">Explore All →</a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Recent Card 1 -->
+          <a href="blog.html?slug=consensus-global-rules" class="group block space-y-4">
+            <div class="relative aspect-[3/4] overflow-hidden rounded-2xl border border-white/5 shadow-xl">
+              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDUtfr7qjviOC1aev4m5jui6b4Gd4SS0m4HNzf3crAWzLdTgijZHWgMuwtd3N4gcggal4ANuK07Hakdi6jGGpxJBAhgyWH-196acGlrvFqgPytROVMc4iIlFOL0QwHVuMAneX63tLmnLkXrvQj5Zq6uNiyhtdn4Xj7CfEIN1RJSX-_oYXSwXHKgO2stB_RZRxhd9HN2HVytlOzcwEAEiD4NJKxzMoLQF5edOi9CiGV4gXmiAsZJoliLR56NeQDyI4T5ODmAYWttrU32')"></div>
+            </div>
+            <div class="space-y-2">
+              <span class="font-mono text-[10px] text-primary uppercase font-bold tracking-wider">Bitcoin</span>
+              <h4 class="font-display text-xl font-bold text-on-surface group-hover:text-primary transition-colors leading-snug">Consensus: The Logic of Global Rules</h4>
+              <p class="font-body text-sm text-on-surface-variant line-clamp-2 opacity-80">Why decentralized governance is the only viable path for a global monetary system.</p>
+              <div class="pt-2 flex items-center space-x-2 font-mono text-[11px] text-on-surface-variant/60">
+                <span>4 min read</span>
+                <span>•</span>
+                <span>Jan 12, 2024</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Recent Card 2 -->
+          <a href="blog.html?slug=physical-hardness-pow" class="group block space-y-4">
+            <div class="relative aspect-[3/4] overflow-hidden rounded-2xl border border-white/5 shadow-xl">
+              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAI6P-rBLquD-TvzdjUT5VUd2SCJTYQc1wVzh77Tk4zjIltxlBtIJQwePNHsLi7oIsMHYEZyE3u7q-gZ5x0rShGd4DM8gqvVw_MeWtPJdHDcHdliIwhcrT2eGRwm_YSEX55R42l7ywjGTxAXXub752cilKa6IkixyCo_LlBYjodWztoX_0HAo29Reoxx5vH0JCFUMnJPK2Lkj6xWicYuTRLpStWev-srokb8jn39iMMNB-JvfZY4gaPWGNzkwt1UlYteioS09EWx18y')"></div>
+            </div>
+            <div class="space-y-2">
+              <span class="font-mono text-[10px] text-primary uppercase font-bold tracking-wider">News</span>
+              <h4 class="font-display text-xl font-bold text-on-surface group-hover:text-primary transition-colors leading-snug">The Physical Hardness of Proof of Work</h4>
+              <p class="font-body text-sm text-on-surface-variant line-clamp-2 opacity-80">How energy consumption creates the most secure network in human history.</p>
+              <div class="pt-2 flex items-center space-x-2 font-mono text-[11px] text-on-surface-variant/60">
+                <span>8 min read</span>
+                <span>•</span>
+                <span>Jan 10, 2024</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Recent Card 3 -->
+          <a href="blog.html?slug=sovereignty-creative-practice" class="group block space-y-4">
+            <div class="relative aspect-[3/4] overflow-hidden rounded-2xl border border-white/5 shadow-xl">
+              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBjXHQ6_K09rq_7BllVXKy8r8kUnAaUnxfGl1CrRPP_Ppdxsr2HDurM9HetqN5LIJCHmdE0iBRcvW-TlKLsho2SEeuYRnLKSIdmC6WZWPIKcxQQ4HX-2DCqcAuB6VLpcD7fwndwfiIKWamu94CQ1XCTS_I7U1xIupgjhDjS2MUnRrcvaYj-LH7jbKP5eHCNY1fSegEbZAQRQCgKNBGWFe9lbjXeu1d1YZm17YbYlSUVJ1Jik9V-BmsDMEf5EX2o4Wq3jzBN4xxWXwBK')"></div>
+            </div>
+            <div class="space-y-2">
+              <span class="font-mono text-[10px] text-primary uppercase font-bold tracking-wider">Trends</span>
+              <h4 class="font-display text-xl font-bold text-on-surface group-hover:text-primary transition-colors leading-snug">Sovereignty as a Creative Practice</h4>
+              <p class="font-body text-sm text-on-surface-variant line-clamp-2 opacity-80">Developing the psychological mindset required for self-custody and independence.</p>
+              <div class="pt-2 flex items-center space-x-2 font-mono text-[11px] text-on-surface-variant/60">
+                <span>6 min read</span>
+                <span>•</span>
+                <span>Jan 08, 2024</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Recent Card 4 -->
+          <a href="blog.html?slug=memetic-power-orange-pill" class="group block space-y-4">
+            <div class="relative aspect-[3/4] overflow-hidden rounded-2xl border border-white/5 shadow-xl">
+              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBt5rRmG9_v3hvygkAX8Q7brZxIBBYxD2fIpxla9Ju5FgNRVO6BtVVdYqmHMcmywJbZWfNcsfIceE8AHt5n6sseQQMUOiM1kZ9EUQrpaFBPG9XRpzLEMVs0xKRPX8jmy2uMXnw8ZirVtikQpvurC-ycKt6iFH_eXie7iHmiSPReL_ohPOPxkQC-krnO9SsjKDNrmUtu93igLt-21_5PbTQP09RRvBpINjkFbZltVbez1HugfcJY6lEfcNO2ekKSpiCKnAQ0yrgsPFxI')"></div>
+            </div>
+            <div class="space-y-2">
+              <span class="font-mono text-[10px] text-primary uppercase font-bold tracking-wider">Bitcoin</span>
+              <h4 class="font-display text-xl font-bold text-on-surface group-hover:text-primary transition-colors leading-snug">The Memetic Power of the Orange Pill</h4>
+              <p class="font-body text-sm text-on-surface-variant line-clamp-2 opacity-80">How a digital asset became a cultural phenomenon and a social identity.</p>
+              <div class="pt-2 flex items-center space-x-2 font-mono text-[11px] text-on-surface-variant/60">
+                <span>10 min read</span>
+                <span>•</span>
+                <span>Jan 05, 2024</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Subscription Area -->
+    <section class="max-w-screen-xl mx-auto py-24 px-6 md:px-16 text-center">
+      <div class="space-y-6 max-w-2xl mx-auto">
+        <span class="font-mono text-xs text-primary uppercase tracking-widest font-bold">Stay Informed</span>
+        <h2 class="font-display text-3xl md:text-5xl font-bold text-on-surface">Join the Editorial Circle</h2>
+        <p class="font-body text-base md:text-lg text-on-surface-variant">Weekly insights on the macro, micro, and cultural shifts of the Bitcoin era. No noise, just signal.</p>
+        <form class="flex flex-col sm:flex-row gap-4 pt-6 max-w-xl mx-auto">
+          <input class="flex-grow bg-surface-container-low border border-outline-variant/50 focus:border-primary text-on-surface placeholder:text-on-surface-variant/50 font-mono text-xs px-4 h-14 rounded-xl outline-none transition-all" placeholder="Your electronic mail address" type="email" required/>
+          <button class="bg-gradient-to-r from-amber-500 to-orange-500 text-black px-8 h-14 rounded-xl font-mono text-xs uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all font-bold shrink-0 shadow-lg shadow-orange-500/20" type="submit">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full bg-surface-container-lowest border-t border-outline-variant/20">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 px-6 md:px-16 py-16 max-w-screen-2xl mx-auto">
+      <div class="md:col-span-4 space-y-4">
+        <a class="font-display text-2xl text-primary font-bold flex items-center gap-2" href="index.html">
+          <span class="material-symbols-outlined text-primary text-3xl">currency_bitcoin</span>
+          <span>Bitcoin Journal</span>
+        </a>
+        <p class="font-body text-sm text-on-surface-variant opacity-80 max-w-xs leading-relaxed">
+          A sanctuary for the sovereign individual. Exploring the intellectual frontiers of digital scarcity and Austrian economics.
+        </p>
+      </div>
+
+      <div class="md:col-span-2 space-y-4">
+        <h4 class="font-mono text-xs text-on-surface uppercase opacity-50 tracking-wider">Navigation</h4>
+        <ul class="space-y-2.5 font-body text-sm text-on-surface-variant">
+          <li><a class="hover:text-primary transition-colors" href="index.html">Home</a></li>
+          <li><a class="hover:text-primary transition-colors" href="blog.html">Blog Archives</a></li>
+          <li><a class="hover:text-primary transition-colors" href="about.html">About & Manifesto</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-2 space-y-4">
+        <h4 class="font-mono text-xs text-on-surface uppercase opacity-50 tracking-wider">Legal & Access</h4>
+        <ul class="space-y-2.5 font-body text-sm text-on-surface-variant">
+          <li><a class="hover:text-primary transition-colors" href="about.html">Editorial Policy</a></li>
+          <li><a class="hover:text-primary transition-colors" href="about.html">Privacy</a></li>
+          <li><a class="hover:text-primary transition-colors" href="about.html#contact">Contact</a></li>
+          <li><a class="hover:text-primary transition-colors text-primary font-mono" href="admin.html">Admin Gateway</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-4 space-y-4">
+        <h4 class="font-mono text-xs text-on-surface uppercase opacity-50 tracking-wider">Connect</h4>
+        <div class="flex space-x-6">
+          <a class="text-on-surface-variant hover:text-primary transition-colors" href="#" aria-label="Email"><span class="material-symbols-outlined text-2xl">alternate_email</span></a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors" href="#" aria-label="RSS Feed"><span class="material-symbols-outlined text-2xl">rss_feed</span></a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors" href="#" aria-label="Network"><span class="material-symbols-outlined text-2xl">language</span></a>
+        </div>
+      </div>
+
+      <div class="md:col-span-12 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center text-xs font-mono opacity-60 space-y-2 md:space-y-0">
+        <p>© 2024 Bitcoin Journal. The Cultural Evolution of Bitcoin.</p>
+        <p data-stat="block-height">Block Height: 841,234</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="/src/app.js"></script>
+</body>
+</html>
