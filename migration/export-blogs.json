@@ -1,0 +1,61 @@
+[
+  {
+    "id": "sovereignty-private-key",
+    "slug": "sovereignty-private-key",
+    "title": "The Sovereignty of the Private Key",
+    "category": "Bitcoin",
+    "readTime": "12 Min Read",
+    "date": "October 24, 2024",
+    "author": "Elias Thorne",
+    "authorRole": "Senior Fellow, Nakamoto Institute",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuB-sTPQESIBdIhICUMh9Ckd08_dxtQklxCVYbhmEL-m3HNhh8T7XSqLCGYPfxiN5ds0wL6Vnw6Zd9_gQoG9vnhTrTw9id_bPO2LOVzM7iw_hsSYOop56XS8P54nNsf75eh31da_wt-uOVyDoyv-a7XHn1qjniIQwCH-ES1_HT4BS9ABBNt7wEIRE_YfqsJYee9kozGMncMUP_3aaO7o3gJvzhqAibd5H_QPlxpFkWhF4c86DsmT9TN1IX-GkByqEALh86c_xLZnv7H3",
+    "snippet": "In the digital landscape of the twenty-first century, ownership is rewritten in cryptography. Explore how 256-bit keys grant absolute sovereignty.",
+    "content": "In the digital landscape of the twenty-first century, the concept of ownership has undergone a radical transformation. What was once defined by physical possession and legal titles is now being rewritten in the immutable language of cryptography. At the heart of this revolution lies a singular, potent artifact: the private key.\n\nTo understand the gravity of the private key is to understand the shift from permission-based systems to permissionless reality. Traditional finance relies on intermediation—a series of digital ledgers held by centralized entities who grant us access to our own value.\n\nIn the Bitcoin paradigm, the key serves as the bridge between the mathematical certainty of the network and the individual will. It is a 256-bit number that represents more than just a balance; it represents the absolute right of disposal. This is sovereignty distilled to its purest form.",
+    "status": "Published",
+    "featured": true
+  },
+  {
+    "id": "case-for-digital-scarcity",
+    "slug": "case-for-digital-scarcity",
+    "title": "A Case for Digital Absolute Scarcity",
+    "category": "Bitcoin",
+    "readTime": "10 Min Read",
+    "date": "Jan 15, 2024",
+    "author": "Hal Finney",
+    "authorRole": "Cypherpunk Pioneer",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuB1wz8cowi1U10l1HhzRKBmR-3HzXMkkrIIFpWM5fwCD7I6e_NVzvwKu7p5qf7_dP_am9XbIN6_7uJHDQlPlGvR8X9GAkqEt0ZkzhHGQ8UHs_HUxgMvxYLIoQkG3GhpCV52JRozJQ3Uj1OEz1MO79Vv2DkqABMfYzsKml8RKpENH9-SxNYzCSs5Ded98zVK4NtmQnRvqjIF6LCRG1j-2f-VMxmwA3bFm3UyKmiP2xKkLgKHMKA5yPNDx7nMKzSXW5nIQd3DrjO5n7WF",
+    "snippet": "How the invention of Bitcoin solved the double-spend problem and redefined the nature of money forever.",
+    "content": "Absolute scarcity is an unprecedented milestone in economic history. Prior to Bitcoin, every digital asset could be duplicated effortlessly. Nakamoto consensus established a cryptographic protocol that limits total supply to 21 million units.",
+    "status": "Published",
+    "curated": true
+  },
+  {
+    "id": "prehistory-electronic-cash",
+    "slug": "prehistory-electronic-cash",
+    "title": "The Prehistory of Electronic Cash",
+    "category": "News",
+    "readTime": "14 Min Read",
+    "date": "Jan 12, 2024",
+    "author": "Nick Szabo",
+    "authorRole": "Computer Scientist & Cryptographer",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAtLHCUrUMoRmpwsr013e3jx_dqH4u3PMA19-qB8jYXNCGX7rLVqXtuqXlDdbTxdrXoWEpEayQpm3lOH9Fo8pF1dkjyrJwkV-D_PWKnfVmQldxs-Om_d6IeIzjJ83usApvLxFSourC93WIcy5mAmL7DrGUVSHj5lQu-Ey3TujgHopdqd9SiCPcUuEPgPnq4I2wnR64EsbpPov00z58lpaR2bOKuMG2bz4uI2z6laDicq-gJZZhFYKdiEZlXRybiSqfu4qL2CEcJn3b0",
+    "snippet": "From DigiCash to B-Money and Bit Gold: tracing the thirty-year lineage that culminated in Satoshi Nakamoto’s whitepaper.",
+    "content": "The journey to sovereign electronic cash spans three decades of cypherpunk research. David Chaum, Wei Dai, and Nick Szabo established foundational concepts that laid the groundwork for Nakamoto consensus.",
+    "status": "Published",
+    "curated": true
+  },
+  {
+    "id": "consensus-global-rules",
+    "slug": "consensus-global-rules",
+    "title": "Consensus: The Logic of Global Rules",
+    "category": "Trends",
+    "readTime": "4 Min Read",
+    "date": "Jan 12, 2024",
+    "author": "Saifedean Ammous",
+    "authorRole": "Economist & Author",
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDUtfr7qjviOC1aev4m5jui6b4Gd4SS0m4HNzf3crAWzLdTgijZHWgMuwtd3N4gcggal4ANuK07Hakdi6jGGpxJBAhgyWH-196acGlrvFqgPytROVMc4iIlFOL0QwHVuMAneX63tLmnLkXrvQj5Zq6uNiyhtdn4Xj7CfEIN1RJSX-_oYXSwXHKgO2stB_RZRxhd9HN2HVytlOzcwEAEiD4NJKxzMoLQF5edOi9CiGV4gXmiAsZJoliLR56NeQDyI4T5ODmAYWttrU32",
+    "snippet": "Why decentralized governance and unalterable rules are the only viable path for a global monetary network.",
+    "content": "Rules without rulers provide predictable monetary policy. In a world of perpetual fiat debasement, unalterable consensus rules protect human labor and capital accumulation.",
+    "status": "Published"
+  }
+]

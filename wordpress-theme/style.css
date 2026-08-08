@@ -1,0 +1,327 @@
+/*
+Theme Name: Bitcoin Trend Elite
+Theme URI: https://bitcointrendelite.com
+Author: Bitcoin Trend Elite Team
+Author URI: https://bitcointrendelite.com
+Description: Production-ready custom WordPress theme for Bitcoin Trend Elite featuring ultra-smooth 210-frame canvas scroll animation, material dark design system, glassmorphism, responsive navigation drawer, interactive search & subscribe modals, and native WordPress Posts, Categories, and Media Library integration.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: bitcoin-trend-elite
+Tags: bitcoin, dark-mode, custom-theme, grid-layout, custom-menu, featured-images, responsive-layout
+*/
+
+/* ==========================================================================
+   BITCOIN JOURNAL - PREMIUM DESIGN SYSTEM & UTILITY STYLES
+   ========================================================================== */
+
+:root {
+  --bg-dark: #121414;
+  --bg-surface: #121414;
+  --bg-surface-container: #1e2020;
+  --bg-surface-low: #1a1c1c;
+  --bg-surface-high: #282a2b;
+  --accent-gold: #f7931a;
+  --accent-gold-bright: #ffb874;
+  --text-on-surface: #e2e2e2;
+  --text-on-variant: #dbc2ae;
+  --font-display: 'Playfair Display', serif;
+  --font-mono: 'Space Grotesk', monospace;
+  --font-body: 'Geist', 'Inter', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--bg-dark);
+  color: var(--text-on-surface);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--bg-dark);
+}
+
+/* Custom Minimal Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0c0f0f;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(247, 147, 26, 0.4);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold);
+}
+
+/* Accessibility Focus Indicators */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent-gold-bright) !important;
+  outline-offset: 2px !important;
+}
+
+/* Film Grain Overlay */
+.grain-overlay, .grain {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Gold Gradient Text */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #ffb874 0%, #f7931a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Material Symbols Icon Tweaks */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+/* HERO CANVAS WRAPPER & PINNED HERO SECTION */
+#scroll-animation-section {
+  position: relative;
+  width: 100%;
+  height: 300vh;
+}
+
+.sticky-canvas-container {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#hero-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.canvas-overlay-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 35%, rgba(18, 20, 20, 0.85) 90%),
+              linear-gradient(to bottom, rgba(18, 20, 20, 0.4) 0%, transparent 20%, transparent 70%, rgba(18, 20, 20, 0.95) 100%);
+  pointer-events: none;
+}
+
+/* CANVAS HERO TEXT OVERLAY */
+.canvas-hero-text {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 20;
+  width: 90%;
+  max-width: 1000px;
+}
+
+/* GLASSMORPHIC NAVBAR */
+.glass-nav, .glass-header {
+  background: rgba(18, 20, 20, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: padding 0.3s ease, background 0.3s ease;
+}
+
+.glass-nav.scrolled, .glass-header.scrolled {
+  background: rgba(18, 20, 20, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(247, 147, 26, 0.25);
+}
+
+/* MINIMAL FLOATING SCRUBBER */
+.minimal-hud {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(18, 20, 20, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(247, 147, 26, 0.3);
+  border-radius: 9999px;
+  padding: 10px 24px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7), 0 0 20px rgba(247, 147, 26, 0.15);
+  transition: opacity 0.4s ease;
+}
+
+.hud-scrubber-track-bg {
+  width: 200px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hud-scrubber-track-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ffb874, #f7931a);
+  border-radius: 2px;
+  transition: width 0.1s linear;
+}
+
+.hud-frame-display {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: rgba(226, 226, 226, 0.6);
+  letter-spacing: 0.05em;
+}
+
+.hud-frame-display span {
+  color: var(--accent-gold-bright);
+  font-weight: 700;
+}
+
+/* ALTERNATING BLOG CARDS STYLING */
+.blog-card-alternating {
+  display: grid;
+  grid-template-cols: 1fr;
+  gap: 2rem;
+  align-items: center;
+  background-color: rgba(30, 32, 32, 0.5);
+  border: 1px solid rgba(85, 67, 53, 0.3);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 768px) {
+  .blog-card-alternating {
+    grid-template-columns: repeat(12, 1fr);
+    padding: 2rem;
+  }
+
+  .blog-card-alternating:nth-child(odd) .blog-card-img-col {
+    grid-column: span 6 / span 6;
+    order: 1;
+  }
+  .blog-card-alternating:nth-child(odd) .blog-card-text-col {
+    grid-column: span 6 / span 6;
+    order: 2;
+  }
+
+  .blog-card-alternating:nth-child(even) .blog-card-img-col {
+    grid-column: span 6 / span 6;
+    order: 2;
+  }
+  .blog-card-alternating:nth-child(even) .blog-card-text-col {
+    grid-column: span 6 / span 6;
+    order: 1;
+  }
+}
+
+.blog-card-alternating:hover {
+  border-color: rgba(255, 184, 116, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(247, 147, 26, 0.08);
+}
+
+.blog-card-img-wrapper {
+  overflow: hidden;
+  border-radius: 0.875rem;
+  aspect-ratio: 16 / 10;
+  position: relative;
+  background-color: var(--bg-surface-high);
+}
+
+.blog-card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.blog-card-alternating:hover .blog-card-img-wrapper img {
+  transform: scale(1.06);
+}
+
+/* Category Selector Buttons */
+.cat-pill-active {
+  background: linear-gradient(135deg, #ffb874 0%, #f7931a 100%);
+  color: #0c0f0f;
+  font-weight: 800;
+  border: 1px solid rgba(255, 184, 116, 0.9);
+  box-shadow: 0 10px 30px rgba(247, 147, 26, 0.35), 0 0 20px rgba(255, 184, 116, 0.2);
+  transform: translateY(-2px);
+}
+
+.cat-pill-inactive {
+  background: rgba(30, 32, 32, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  color: #dbc2ae;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.cat-pill-inactive:hover {
+  background: rgba(45, 48, 49, 0.95);
+  border-color: rgba(255, 184, 116, 0.6);
+  color: #ffffff;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), 0 0 20px rgba(247, 147, 26, 0.15);
+}
+
+/* Article Drop Cap */
+.drop-cap::first-letter {
+  font-size: 3.5rem;
+  font-family: var(--font-display);
+  float: left;
+  line-height: 1;
+  margin-right: 0.75rem;
+  margin-top: 0.25rem;
+  color: var(--accent-gold-bright);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Side Scroll Transition */
+.side-scroll-quote {
+  transition: opacity 0.15s ease-out, transform 0.15s ease-out, visibility 0.15s ease-out;
+  will-change: opacity, transform;
+}

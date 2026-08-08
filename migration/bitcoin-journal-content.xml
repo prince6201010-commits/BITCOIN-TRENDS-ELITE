@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0"
+	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:wp="http://wordpress.org/export/1.2/"
+>
+<channel>
+	<title>Bitcoin Trend Elite</title>
+	<link>https://bitcointrendelite.com</link>
+	<description>An immersive editorial sanctuary chronicling Austrian economics, cypherpunk philosophy, and digital scarcity.</description>
+	<pubDate>Sat, 08 Aug 2026 10:00:00 +0000</pubDate>
+	<language>en-US</language>
+	<wp:wxr_version>1.2</wp:wxr_version>
+	<wp:base_site_url>https://bitcointrendelite.com</wp:base_site_url>
+	<wp:base_blog_url>https://bitcointrendelite.com</wp:base_blog_url>
+
+	<wp:category>
+		<wp:term_id>1</wp:term_id>
+		<wp:category_nicename>bitcoin</wp:category_nicename>
+		<wp:category_parent></wp:category_parent>
+		<wp:cat_name><![CDATA[Bitcoin]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>2</wp:term_id>
+		<wp:category_nicename>news</wp:category_nicename>
+		<wp:category_parent></wp:category_parent>
+		<wp:cat_name><![CDATA[News]]></wp:cat_name>
+	</wp:category>
+	<wp:category>
+		<wp:term_id>3</wp:term_id>
+		<wp:category_nicename>trends</wp:category_nicename>
+		<wp:category_parent></wp:category_parent>
+		<wp:cat_name><![CDATA[Trends]]></wp:cat_name>
+	</wp:category>
+
+	<item>
+		<title>The Sovereignty of the Private Key</title>
+		<link>https://bitcointrendelite.com/sovereignty-private-key</link>
+		<pubDate>Thu, 24 Oct 2024 12:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Elias Thorne]]></dc:creator>
+		<guid isPermaLink="false">https://bitcointrendelite.com/?p=101</guid>
+		<description></description>
+		<content:encoded><![CDATA[In the digital landscape of the twenty-first century, the concept of ownership has undergone a radical transformation. What was once defined by physical possession and legal titles is now being rewritten in the immutable language of cryptography. At the heart of this revolution lies a singular, potent artifact: the private key.
+
+To understand the gravity of the private key is to understand the shift from permission-based systems to permissionless reality. Traditional finance relies on intermediation—a series of digital ledgers held by centralized entities who grant us access to our own value.
+
+In the Bitcoin paradigm, the key serves as the bridge between the mathematical certainty of the network and the individual will. It is a 256-bit number that represents more than just a balance; it represents the absolute right of disposal. This is sovereignty distilled to its purest form.]]></content:encoded>
+		<excerpt:encoded><![CDATA[In the digital landscape of the twenty-first century, ownership is rewritten in cryptography. Explore how 256-bit keys grant absolute sovereignty.]]></excerpt:encoded>
+		<wp:post_id>101</wp:post_id>
+		<wp:post_date><![CDATA[2024-10-24 12:00:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2024-10-24 12:00:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[open]]></wp:ping_status>
+		<wp:post_name><![CDATA[sovereignty-private-key]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<category domain="category" nicename="bitcoin"><![CDATA[Bitcoin]]></category>
+	</item>
+
+	<item>
+		<title>A Case for Digital Absolute Scarcity</title>
+		<link>https://bitcointrendelite.com/case-for-digital-scarcity</link>
+		<pubDate>Mon, 15 Jan 2024 12:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Hal Finney]]></dc:creator>
+		<guid isPermaLink="false">https://bitcointrendelite.com/?p=102</guid>
+		<content:encoded><![CDATA[Absolute scarcity is an unprecedented milestone in economic history. Prior to Bitcoin, every digital asset could be duplicated effortlessly. Nakamoto consensus established a cryptographic protocol that limits total supply to 21 million units.]]></content:encoded>
+		<excerpt:encoded><![CDATA[How the invention of Bitcoin solved the double-spend problem and redefined the nature of money forever.]]></excerpt:encoded>
+		<wp:post_id>102</wp:post_id>
+		<wp:post_date><![CDATA[2024-01-15 12:00:00]]></wp:post_date>
+		<wp:post_name><![CDATA[case-for-digital-scarcity]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<category domain="category" nicename="bitcoin"><![CDATA[Bitcoin]]></category>
+	</item>
+
+	<item>
+		<title>The Prehistory of Electronic Cash</title>
+		<link>https://bitcointrendelite.com/prehistory-electronic-cash</link>
+		<pubDate>Fri, 12 Jan 2024 12:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Nick Szabo]]></dc:creator>
+		<guid isPermaLink="false">https://bitcointrendelite.com/?p=103</guid>
+		<content:encoded><![CDATA[The journey to sovereign electronic cash spans three decades of cypherpunk research. David Chaum, Wei Dai, and Nick Szabo established foundational concepts that laid the groundwork for Nakamoto consensus.]]></content:encoded>
+		<excerpt:encoded><![CDATA[From DigiCash to B-Money and Bit Gold: tracing the thirty-year lineage that culminated in Satoshi Nakamoto’s whitepaper.]]></excerpt:encoded>
+		<wp:post_id>103</wp:post_id>
+		<wp:post_date><![CDATA[2024-01-12 12:00:00]]></wp:post_date>
+		<wp:post_name><![CDATA[prehistory-electronic-cash]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<category domain="category" nicename="news"><![CDATA[News]]></category>
+	</item>
+
+	<item>
+		<title>Consensus: The Logic of Global Rules</title>
+		<link>https://bitcointrendelite.com/consensus-global-rules</link>
+		<pubDate>Fri, 12 Jan 2024 12:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Saifedean Ammous]]></dc:creator>
+		<guid isPermaLink="false">https://bitcointrendelite.com/?p=104</guid>
+		<content:encoded><![CDATA[Rules without rulers provide predictable monetary policy. In a world of perpetual fiat debasement, unalterable consensus rules protect human labor and capital accumulation.]]></content:encoded>
+		<excerpt:encoded><![CDATA[Why decentralized governance and unalterable rules are the only viable path for a global monetary network.]]></excerpt:encoded>
+		<wp:post_id>104</wp:post_id>
+		<wp:post_date><![CDATA[2024-01-12 12:00:00]]></wp:post_date>
+		<wp:post_name><![CDATA[consensus-global-rules]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<category domain="category" nicename="trends"><![CDATA[Trends]]></category>
+	</item>
+</channel>
+</rss>
